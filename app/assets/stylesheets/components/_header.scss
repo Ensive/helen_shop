@@ -1,0 +1,28 @@
+.header {
+  background: #3F403F;
+  height: 90px;
+  // TODO: move to the variable as a $gray-light
+  width: 100%;
+}
+
+  .header-link {
+    display: inline-block;
+    line-height: 90;
+    text-transform: uppercase;
+  }
+
+  .header-link.mod-logo {
+
+  }
+
+  .header-link.mod-cart {
+
+  }
+
+    .header-link-icon {
+
+    }
+
+    .header-link-badge {
+
+    }
