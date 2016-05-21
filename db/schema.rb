@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160520113852) do
     t.text     "body",                             null: false
     t.string   "ip"
     t.integer  "product_id"
+    t.bigint   "stars"
     t.boolean  "answer",                           null: false
     t.boolean  "approved",   default: false,       null: false
     t.integer  "rank",       default: 0,           null: false
