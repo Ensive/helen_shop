@@ -35,7 +35,7 @@
   }
 
   .header-link.mod-cart {
-
+    padding: 24px 0 0 0;
   }
 
     .header-link-icon {
@@ -43,5 +43,6 @@
     }
 
     .header-link-badge {
-
+      @extend .badge;
+      display: inline-block;
     }

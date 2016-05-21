@@ -12,28 +12,7 @@
 
   <body>
     <!-- TODO: move the header into separate component -->
-    <header class="header u-clear">
-      <a class="header-link mod-logo" href="#">
-        <h1>Helen Shop</h1>
-      </a>
-      <a class="header-link" href="#">
-        Каталог
-      </a>
-      <a class="header-link" href="#">
-        Доставка и оплата
-      </a>
-      <a class="header-link" href="#">
-        Контакты
-      </a>
-      <a class="header-link" href="#">
-        Отзывы
-      </a>
-      <a class="header-link mod-cart" href="#">
-        <i class="header-link-icon"></i>
-        Моя корзина
-        <i class="header-link-badge">2</i>
-      </a>
-    </header>
+    <%= render partial: 'reusable_partials/header' %>
     <%= yield %>
   </body>
 </html>

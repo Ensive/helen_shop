@@ -1,0 +1,19 @@
+// Badge component
+
+// Used for counters ang tags
+
+.badge {
+  color: $gray-light;
+  display: block;
+}
+
+  .badge.mod-white {
+    background-color: $white;
+  }
+
+  .badge.mod-circle {
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    border-radius: 50%;
+  }
