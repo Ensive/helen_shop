@@ -1,18 +1,37 @@
 .header {
-  background: #3F403F;
-  height: 90px;
+  background: $gray-light;
+  font-size: 0;
+  //height: 90px;
   // TODO: move to the variable as a $gray-light
+  height: 70px;
   width: 100%;
+  //overflow: hidden;
 }
 
   .header-link {
-    display: inline-block;
-    line-height: 90;
+    color: $white;
+    display: block;
+    float: left;
+    font-size: 1.5rem;
+    font-weight: 300;
+    height: 100%;
+    padding: 28px 0 0;
+    //padding: 38px 0 0;
+    text-align: center;
+    text-decoration: none;
     text-transform: uppercase;
+    transition: .2s ease background-color;
+    width: 16.66666666666667%;
+
+    &:hover {
+      background-color: $gray-dark;
+    }
   }
 
   .header-link.mod-logo {
-
+    font-size: 2.4rem;
+    padding: 21px 0 0 0;
+    text-transform: none;
   }
 
   .header-link.mod-cart {

@@ -5,13 +5,16 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+    <!-- TODO: move the header into separate component -->
     <header class="header u-clear">
       <a class="header-link mod-logo" href="#">
-        Helen Shop
+        <h1>Helen Shop</h1>
       </a>
       <a class="header-link" href="#">
         Каталог
@@ -20,7 +23,7 @@
         Доставка и оплата
       </a>
       <a class="header-link" href="#">
-        Контакты и филиалы
+        Контакты
       </a>
       <a class="header-link" href="#">
         Отзывы
