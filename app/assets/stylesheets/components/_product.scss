@@ -1,0 +1,43 @@
+.product {
+  float: left;
+  margin-right: 2%;
+  overflow: hidden;
+  text-align: center;
+  width: 23.5%;
+}
+
+.product__link {
+  display: block;
+  text-decoration: none;
+}
+
+.product__image {
+  max-height: 245px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.product__name,
+.product__price {
+  color: #465a65;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  line-height: 25px;
+}
+
+.product__name {
+  display: block;
+  margin-top: .5em;
+  text-decoration: none;
+
+  &:hover {
+    color: darken(#3e3c42, 10%);
+    text-decoration: underline;
+  }
+}
+
+.product__price {
+  display: block;
+}

@@ -15,8 +15,10 @@
 
 @import 'variables';
 @import 'reset';
+//@import 'scaffolds';
 // TODO: how to include font-icons in rails (asset pipeline)
-@import 'icons';
+//@import 'icons';
+@import 'utils';
 
 html {
   box-sizing: border-box;
@@ -32,6 +34,10 @@ body {
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
 }
 
 @import 'reusable/*';
