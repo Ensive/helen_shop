@@ -6,18 +6,20 @@
 <div class="product-list u-clear">
   <% @products.each do |product| %>
     <div class="product">
-      <%= link_to product, class: 'product__link' do %>
+      <%= link_to product, class: 'product__link product__link--image-wrapper' do %>
         <%= image_tag product.image_url, class: 'product__image' %>
       <% end %>
 
-      <%= link_to product, class: 'product__name' do %>
-        <%= product.name %>
-      <% end %>
+      <div class="product__metadata">
+        <%#= link_to product, class: 'product__name' do %>
+          <%#= product.name %>
+        <%# end %>
 
-      <span class="product__price">
-        <!-- TODO: make UAH -->
-        <%= number_to_currency(product.price) %>
-      </span>
+        <span class="product__price">
+          <!-- TODO: make UAH -->
+          <%= number_to_currency(product.price) %>
+        </span>
+      </div>
 
       <!--button_to-->
       <!-- mask with add icon -->
