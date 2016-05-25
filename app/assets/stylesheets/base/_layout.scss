@@ -1,0 +1,14 @@
+.main {
+  width: 100%;
+  padding: 0 0 2em;
+}
+
+.container {
+  @include container();
+}
+
+.content {
+  float: left;
+  margin-left: 1.041666666667%;
+  width: 68.75%;
+}
