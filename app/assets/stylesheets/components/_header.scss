@@ -1,34 +1,34 @@
 .header {
-  background: $gray-light;
   font-size: 0;
-  //height: 90px;
-  // TODO: move to the variable as a $gray-light
-  height: 70px;
+  height: 50px;
   width: 100%;
   //overflow: hidden;
 }
 
   .header__nav {
-    height: 70px;
+    height: 50px;
   }
 
     .header-link {
-      color: $white;
+      color: #333;
       display: block;
       float: left;
-      font-size: 1.5rem;
-      font-weight: 300;
+      font-size: 1.6rem;
       height: 100%;
-      padding: 28px 0 0;
-      //padding: 38px 0 0;
+      line-height: 20px;
+      padding: 15px;
       text-align: center;
       text-decoration: none;
       text-transform: uppercase;
-      transition: .2s ease background-color;
-      width: 16.66666666666667%;
+      transition: .3s ease color;
 
       &:hover {
-        background-color: $gray-dark;
+        color: $red;
+      }
+      
+      &.is-active {
+        background-color: $red;
+        color: $white;
       }
     }
 
@@ -48,6 +48,6 @@
 
       .header-link-badge {
         @extend .badge;
-        margin-left: 3px;
         display: inline-block;
+        margin-left: 3px;
       }

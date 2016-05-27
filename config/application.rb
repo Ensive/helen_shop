@@ -12,7 +12,9 @@ module HelenShop
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    # fonts
+    # fonts & icons
+    # TODO: make sure, that we need this
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.assets.paths << Rails.root.join('app', 'assets', 'icons')
   end
 end

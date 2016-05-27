@@ -1,8 +1,12 @@
 <!-- TODO: make it as a toast ? -->
-<p id="notice"><%= notice %></p>
+<!--<p id="notice">-->
+  <%#= notice %>
+<!--</p>-->
 
 <!--<h2>Products</h2>-->
+<%= render partial: 'reusable_partials/sidebar' %>
 
+<div class="content">
 <div class="product-list u-clear">
   <% @products.each do |product| %>
     <div class="product">
@@ -48,6 +52,7 @@
         <!-- TODO: data: confirm doesn't work without jquery & jquery-ujs -->
         <%#= button_to 'Destroy', product, method: :delete %>
     <%# end %>
+</div>
 </div>
 
 <!--<br>-->

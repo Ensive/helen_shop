@@ -13,17 +13,17 @@
  *= require_self
  */
 
-@import 'base/mixins';
+@import 'reset.css';
+
 @import 'base/variables';
-@import 'reset';
-//@import 'scaffolds';
-// TODO: how to include font-icons in rails (asset pipeline)
-//@import 'icons';
+@import 'base/mixins';
 @import 'utils';
+@import 'base/fonts';
+@import 'base/icons';
 
 html {
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $sf-ui-text-medium, sans-serif;
   font-size: 62.5%;
 }
 
@@ -44,4 +44,3 @@ img {
 @import 'base/layout';
 @import 'reusable/*';
 @import 'components/*';
-@import 'base/fonts';
