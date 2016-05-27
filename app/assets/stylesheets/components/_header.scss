@@ -1,6 +1,5 @@
 .header {
   font-size: 0;
-  height: 50px;
   width: 100%;
 }
 
@@ -12,7 +11,7 @@
       color: $gray-dark;
       display: block;
       float: left;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       height: 100%;
       line-height: 20px;
       padding: 15px;
@@ -51,7 +50,7 @@
 
       .header__text {
         font-family: $sf-ui-text-regular;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         text-transform: none;
         vertical-align: top;
       }
@@ -59,9 +58,9 @@
     .header__link--category {
       text-transform: inherit;
       font-family: $sf-ui-text-regular;
-      font-size: 1.6rem;
-      padding-top: 13px;
-      padding-bottom: 13px;
+      font-size: 1.4rem;
+      padding-top: 15px;
+      padding-bottom: 11px;
 
       &.is-active {
         background-color: $white;

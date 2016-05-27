@@ -6,15 +6,15 @@
 <%= render partial: 'reusable_partials/sidebar' %>
 
 <div class="content u-clear">
-  <div class="product-list u-clear">
+  <div class="products u-clear">
     <% @products.each do |product| %>
-      <div class="product">
-        <%= link_to product, class: 'product__link product__link--image-wrapper' do %>
-          <%= image_tag product.image_url, class: 'product__image' %>
+      <div class="products-item">
+        <%= link_to product, class: 'products-item__link products-item__link--image-wrapper' do %>
+          <%= image_tag product.image_url, class: 'products-item__image' %>
         <% end %>
 
-        <div class="product__metadata">
-          <span class="product__price">
+        <div class="products-item__metadata">
+          <span class="products-item__price">
             <!-- TODO: make UAH -->
             <%= number_to_currency(product.price) %>
           </span>
