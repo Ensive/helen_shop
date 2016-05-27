@@ -24,3 +24,9 @@ ru:
     men: Мужчинам
     women: Женщинам
     my_cart: Моя корзина
+
+  categories:
+    new: Новинки
+    clothing: Одежда
+    shoes: Обувь
+    sale: Распродажа

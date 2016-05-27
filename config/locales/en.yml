@@ -24,3 +24,9 @@ en:
     men: Men
     women: Women
     my_cart: My Cart
+
+  categories:
+    new: New
+    clothing: Clothing
+    shoes: Shoes
+    sale: Sale
