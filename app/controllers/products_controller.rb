@@ -71,8 +71,13 @@ class ProductsController < ApplicationController
     def product_params
       # @todo: add all params
       params.require(:product)
-          .permit(:sku, :name, :category_id,
-                  :description, :image_url,
-                  :weight, :in_stock, :available, :price)
+          .permit(:sku,
+                  :name,
+                  :category_id,
+                  :description,
+                  :image_url,
+                  :in_stock,
+                  :available,
+                  :price)
     end
 end

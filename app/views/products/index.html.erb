@@ -3,58 +3,28 @@
   <%#= notice %>
 <!--</p>-->
 
-<!--<h2>Products</h2>-->
 <%= render partial: 'reusable_partials/sidebar' %>
 
-<div class="content">
-<div class="product-list u-clear">
-  <% @products.each do |product| %>
-    <div class="product">
-      <%= link_to product, class: 'product__link product__link--image-wrapper' do %>
-        <%= image_tag product.image_url, class: 'product__image' %>
-      <% end %>
+<div class="content u-clear">
+  <div class="product-list u-clear">
+    <% @products.each do |product| %>
+      <div class="product">
+        <%= link_to product, class: 'product__link product__link--image-wrapper' do %>
+          <%= image_tag product.image_url, class: 'product__image' %>
+        <% end %>
 
-      <div class="product__metadata">
-        <%#= link_to product, class: 'product__name' do %>
-          <%#= product.name %>
-        <%# end %>
+        <div class="product__metadata">
+          <span class="product__price">
+            <!-- TODO: make UAH -->
+            <%= number_to_currency(product.price) %>
+          </span>
+          <span>
+            <i class="icon-appicons-08"></i>
+          </span>
+        </div>
 
-        <span class="product__price">
-          <!-- TODO: make UAH -->
-          <%= number_to_currency(product.price) %>
-        </span>
+        <!-- discount label -->
       </div>
-
-      <!--button_to-->
-      <!-- mask with add icon -->
-      <!-- discount -->
-    </div>
-  <% end %>
-  <!--<thead>-->
-    <!--<tr>-->
-      <!--<th>SKU</th>-->
-      <!--<th>Name</th>-->
-      <!--<th>Description</th>-->
-      <!--<th>Image url</th>-->
-      <!--<th>Price</th>-->
-      <!--<th colspan="3"></th>-->
-    <!--</tr>-->
-  <!--</thead>-->
-
-    <%# @products.each do |product| %>
-        <%#= product.sku %>
-        <%#= product %>
-        <%#= product.description %>
-        <%#= product.image_url %>
-        <%#= product.price %>
-        <%#= link_to 'Show', product %>
-        <%#= link_to 'Edit', edit_product_path(product) %>
-        <!-- TODO: data: confirm doesn't work without jquery & jquery-ujs -->
-        <%#= button_to 'Destroy', product, method: :delete %>
-    <%# end %>
+    <% end %>
+  </div>
 </div>
-</div>
-
-<!--<br>-->
-
-<%#= link_to 'New Product', new_product_path %>
