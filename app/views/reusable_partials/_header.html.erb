@@ -1,26 +1,29 @@
 <header class="header u-clear">
   <nav class="header__nav">
-    <!--<a class="header-link mod-logo" href="#">-->
-      <!--<h1>Helen Shop</h1>-->
-    <!--</a>-->
-    <a class="header-link is-active" href="#">
-      <%= t('general.women') %>
-    </a>
-    <a class="header-link" href="#">
-      <!--Доставка и оплата-->
-      <%= t('general.men') %>
-    </a>
-    <!--<a class="header-link" href="#">-->
-      <!--Контакты-->
-    <!--</a>-->
-    <!--<a class="header-link" href="#">-->
-      <!--Отзывы-->
-    <!--</a>-->
-    <a class="header-link mod-cart" href="#">
-      <!--<i class="header-link-icon icon-bag"></i>-->
-      <i class="header-link-icon icon-appicons-02"></i>
-      Моя корзина
-      <i class="header-link-badge mod-circle mod-white">2</i>
-    </a>
+
+    <div class="u-left">
+      <a class="header__link is-active" href="#">
+        <%= t 'general.women' %>
+      </a>
+      <a class="header__link" href="#">
+        <%= t 'general.men' %>
+      </a>
+    </div>
+
+    <div class="u-right">
+      <a href="#" class="header__link header__link--icon">
+        <i class="header__icon icon-appicons-09"></i>
+      </a>
+      <a class="header__link header__link--icon" href="#">
+        <i class="header__icon icon-appicons-07"></i>
+      </a>
+      <a class="header__link header__link--icon" href="#" aria-label="<%= t 'general.my_cart' %>">
+        <i class="header__icon icon-appicons-06"></i>
+        <span class="header__text">
+          0 items
+        </span>
+      </a>
+    </div>
+
   </nav>
 </header>

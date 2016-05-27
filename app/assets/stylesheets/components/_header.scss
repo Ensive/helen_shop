@@ -2,14 +2,13 @@
   font-size: 0;
   height: 50px;
   width: 100%;
-  //overflow: hidden;
 }
 
   .header__nav {
     height: 50px;
   }
 
-    .header-link {
+    .header__link {
       color: #333;
       display: block;
       float: left;
@@ -32,22 +31,26 @@
       }
     }
 
-    .header-link.mod-logo {
-      font-size: 2.4rem;
-      padding: 21px 0 0 0;
-      text-transform: none;
+    .header__link--icon {
+      border-left: 1px solid #ccc;
+      color: #777;
+      height: 30px;
+      line-height: 25px;
+      margin: 10px 0;
+      padding-bottom: 5px;
+      padding-top: 5px;
+
+      &:hover {
+        color: #333;
+      }
     }
 
-    .header-link.mod-cart {
-      padding: 24px 0 0 0;
-    }
-
-      .header-link-icon {
-
+      .header__icon {
+        font-size: 2.2rem;
       }
 
-      .header-link-badge {
-        @extend .badge;
-        display: inline-block;
-        margin-left: 3px;
+      .header__text {
+        font-family: $sf-ui-text-regular;
+        font-size: 1.6rem;
+        text-transform: none;
       }
