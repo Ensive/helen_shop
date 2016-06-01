@@ -1,0 +1,28 @@
+// Breadcrumb component
+
+.breadcrumb {
+  margin: 15px 0 15px 15px;
+}
+
+.breadcrumb__link {
+  color: #999;
+  font-family: $sf-ui-text-regular;
+  font-size: 1.4rem;
+  margin-right: 10px;
+  text-decoration: none;
+  transition: color .3s;
+
+  &:hover {
+    color: #666;
+  }
+
+  &:after {
+    content: '>';
+    margin-left: 10px;
+  }
+
+  &:last-child:after {
+    content: '';
+    display: none;
+  }
+}
