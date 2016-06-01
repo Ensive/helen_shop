@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'ancestry'
 # TODO: install
 # gem 'rails_admin'
+gem 'react-rails'
 
 
 # Use Capistrano for deployment
