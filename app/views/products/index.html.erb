@@ -13,12 +13,12 @@
           <%= image_tag product.image_url, class: 'products-item__image' %>
         <% end %>
 
-        <div class="products-item__metadata">
+        <div class="products-item__metadata u-clear">
           <span class="products-item__price">
             <!-- TODO: make UAH -->
             <%= number_to_currency(product.price) %>
           </span>
-          <span>
+          <span class="products-item__wish">
             <i class="icon-appicons-08"></i>
           </span>
         </div>
