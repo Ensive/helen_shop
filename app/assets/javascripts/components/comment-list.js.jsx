@@ -1,11 +1,21 @@
 var CommentList = React.createClass({
-  propTypes: {
 
+  _onChange: function () {
+    this.forceUpdate();
   },
+
+  componentDidMount: function () {
+    Store.addChangeListener(this._onChange);
+  },
+
+  componentWillUnmount: function () {
+    Store.removeChangeListener(this._onChange);
+  },
+
   render: function () {
     return (
       <div>
-        {JSON.parse(this.props.comments).map(function (comment) {
+        {Store.comments().map(function (comment) {
           // return <Comment key={comment.id} author={comment.author} body={comment.body} rank={comment.rank} />;
           return <Comment key={comment.id} {... comment} />
         })}
@@ -13,3 +23,5 @@ var CommentList = React.createClass({
     );
   }
 });
+
+CommentList.propTypes = {};

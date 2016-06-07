@@ -25,6 +25,8 @@ gem 'ancestry'
 # TODO: install
 # gem 'rails_admin'
 gem 'react-rails'
+gem 'flux-rails-assets'
+gem 'lodash-rails'
 
 
 # Use Capistrano for deployment

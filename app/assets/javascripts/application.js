@@ -10,7 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require lodash
 //= require react
 //= require react_ujs
+//= require flux
+//= require eventemitter
 //= require components
+//= require main
 //= require_tree .
