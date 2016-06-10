@@ -1,27 +1,31 @@
-var CommentList = React.createClass({
+import React from 'react';
+import CommentStore from '../stores/CommentStore';
+import Comment from './comment.js'
 
-  _onChange: function () {
+export default class CommentList extends React.Component{
+
+  _onChange() {
     this.forceUpdate();
-  },
+  }
 
-  componentDidMount: function () {
-    commentStore.addChangeListener(this._onChange);
-  },
+  componentDidMount() {
+    CommentStore.addChangeListener(this._onChange);
+  }
 
-  componentWillUnmount: function () {
-    commentStore.removeChangeListener(this._onChange);
-  },
+  componentWillUnmount() {
+    CommentStore.removeChangeListener(this._onChange);
+  }
 
-  render: function () {
+  render() {
     return (
       <div>
-        {commentStore.comments().map(function (comment) {
+        {CommentStore.comments().map(function (comment) {
           // return <Comment key={comment.id} author={comment.author} body={comment.body} rank={comment.rank} />;
           return <Comment key={comment.id} {... comment} />
         })}
       </div>
     );
   }
-});
+}
 
 CommentList.propTypes = {};

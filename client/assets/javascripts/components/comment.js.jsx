@@ -1,3 +1,5 @@
+import React from 'react';
+
 var Comment = React.createClass({
   propTypes: {
     author: React.PropTypes.string,

@@ -20,7 +20,8 @@
     "flux": "^2.1.1",
     "imports-loader": "^0.6.3",
     "loader-utils": "^0.2.7",
-    "react": "^0.13.3",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
     "webpack": "^1.13.0"
   },
   "devDependencies": {},
