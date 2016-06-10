@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CommentList from './components/comment-list.js'
+import CommentList from './components/CommentList.react'
 
 function reactRender() {
   let reactNode = document.getElementById('comment-list');
