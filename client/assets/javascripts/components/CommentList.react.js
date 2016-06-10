@@ -1,25 +1,30 @@
-import React from 'react';
-import CommentStore from '../stores/CommentStore';
+import React, { Component, PropTypes } from 'react';
 import Comment from './Comment.react'
 
-export default class CommentList extends React.Component {
+export default class CommentList extends Component {
 
   _onChange() {
     this.forceUpdate();
   }
 
   componentDidMount() {
-    CommentStore.addChangeListener(this._onChange);
+    this.context.store.addChangeListener(this._onChange.bind(this));
   }
 
   componentWillUnmount() {
-    CommentStore.removeChangeListener(this._onChange);
+    this.context.store.removeChangeListener(this._onChange.bind(this));
+  }
+
+  static get contextTypes() {
+    return {
+      store: PropTypes.object.isRequired
+    }
   }
 
   render() {
     return (
       <div>
-        {CommentStore.comments().map(function (comment) {
+        {this.context.store.comments().map(function (comment) {
           // return <Comment key={comment.id} author={comment.author} body={comment.body} rank={comment.rank} />;
           return <Comment key={comment.id} {... comment} />
         })}

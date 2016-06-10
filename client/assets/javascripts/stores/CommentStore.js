@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
-import AppDispatcher from '../AppDispatcher'
-import AppConstants from '../AppConstants'
+import AppDispatcher from '../AppDispatcher';
+import AppConstants from '../AppConstants';
 
 class CommentEventEmitter extends EventEmitter {
 

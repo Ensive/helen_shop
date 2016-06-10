@@ -1,7 +1,10 @@
+import AppDispatcher from '../AppDispatcher';
+import AppConstants from '../AppConstants';
+
 export default {
   addComment(comment) {
     AppDispatcher.dispatch({
-      actionType: Constants.ADD_COMMENT,
+      actionType: AppConstants.ADD_COMMENT,
       comment
     });
   }
