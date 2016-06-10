@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CommentList from './components/CommentList.react'
+import CommentSection from './components/CommentSection.react'
 
 function reactRender() {
   let reactNode = document.getElementById('comment-list');
   
   if (reactNode) {
-    ReactDOM.render(<CommentList />, reactNode);
+    ReactDOM.render(<CommentSection />, reactNode);
   }
 }
 

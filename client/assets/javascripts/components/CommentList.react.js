@@ -2,7 +2,7 @@ import React from 'react';
 import CommentStore from '../stores/CommentStore';
 import Comment from './Comment.react'
 
-export default class CommentList extends React.Component{
+export default class CommentList extends React.Component {
 
   _onChange() {
     this.forceUpdate();
