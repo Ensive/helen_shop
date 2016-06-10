@@ -1,7 +1,5 @@
-const Constants = {
-  CHANGE_EVENT: 'change',
-  ADD_COMMENT: 'comments.add'
-};
+import { EventEmitter } from 'events';
+import Flux from 'flux';
 
 class Store extends EventEmitter {
 
@@ -56,3 +54,21 @@ let Actions = {
     });
   }
 };
+
+function reactRender() {
+  let reactNode = document.getElementById('comment-list');
+  
+  if (reactNode) {
+    ReactDOM.render(<CommentList />, reactNode);
+  }
+}
+
+function ready(fn) {
+  if (document.readyState != 'loading') {
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
+
+// ready(reactRender);

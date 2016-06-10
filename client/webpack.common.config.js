@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   context: __dirname,
-  entry: ['./assets/javascripts/App'],
+  entry: ['./assets/javascripts/main.js'],
 
   resolve: {
     root: [
