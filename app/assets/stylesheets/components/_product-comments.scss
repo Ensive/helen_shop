@@ -1,3 +1,13 @@
 .product-comments {
+  border-top: 1px solid #ccc;
   margin: 20px 0 0 0;
+  padding: 20px 0 0 0;
+}
+
+.product-comments__title {
+  font-family: $sf-ui-text-regular;
+  font-size: 1.4rem;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0 0 15px;
 }

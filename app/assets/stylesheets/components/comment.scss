@@ -1,0 +1,16 @@
+.comment {
+  margin: 0 0 20px;
+
+  &:last-child { margin: 0; }
+}
+
+.comment__rating {
+  margin: 0 0 10px;
+  font-size: 2.2rem;
+  color: #f0a30a;
+
+  &-icon {
+    margin-right: 5px;
+    &:last-child { margin-right: 0; }
+  }
+}
