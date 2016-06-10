@@ -1,4 +1,5 @@
-// import ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import CommentList from './components/comment-list.js'
 
 function reactRender() {

@@ -6,7 +6,10 @@ class CommentEventEmitter extends EventEmitter {
 
   constructor() {
     super();
-    this._comments = [];
+    this._comments = [
+      { id: 1, author: 'Anton', body: 'Hello there!', rank: 5 },
+      { id: 2, author: 'Daniel', body: 'Hello my dear friend!', rank: 3 }
+    ];
   }
 
   addComment(comment) {

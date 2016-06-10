@@ -1,13 +1,7 @@
 import React from 'react';
 
-var Comment = React.createClass({
-  propTypes: {
-    author: React.PropTypes.string,
-    body: React.PropTypes.string,
-    rank: React.PropTypes.number
-  },
-  
-  render: function () {
+export default class Comment extends React.Component {
+  render() {
     return (
       <div>
         <div>Author: {this.props.author}</div>
@@ -16,5 +10,11 @@ var Comment = React.createClass({
       </div>
     );
   }
-  
-});
+}
+
+Comment.propTypes = {
+  author: React.PropTypes.string,
+  body: React.PropTypes.string,
+  rank: React.PropTypes.number
+};
+
