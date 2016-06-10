@@ -7,7 +7,7 @@ config.output = {
 };
 
 config.module.loaders.push(
-  { test: /\,jsx$/, exclude: /node_modules/, loader: 'babel-loader' },
+  { test: /\.jsx$/, exclude: /node_modules/, loader: 'babel-loader' },
   { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
 );
 
