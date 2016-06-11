@@ -24,7 +24,8 @@ en:
     men: Men
     women: Women
     my_cart: My Cart
-    comments: Comments
+    user_ratings: User Ratings
+#    comments: Comments
 
   categories:
     new: New

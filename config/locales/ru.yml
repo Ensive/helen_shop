@@ -24,7 +24,8 @@ ru:
     men: Мужчинам
     women: Женщинам
     my_cart: Моя корзина
-    comments: Комментарии
+    user_ratings: Отзывы пользователей
+#    comments: Комментарии
 
   categories:
     new: Новинки

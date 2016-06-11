@@ -1,0 +1,29 @@
+.hs_link {
+  color: $blue;
+  text-decoration: none;
+
+  &:hover { text-decoration: underline; }
+
+  &.-animate {
+    display: block;
+    float: left;
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      background-color: $blue;
+      bottom: -2px;
+      content: '';
+      display: block;
+      height: 1px;
+      left: 0;
+      transform: translateX(-100%);
+      transition: transform .3s ease;
+    }
+
+    &:hover {
+      text-decoration: none;
+      &::after { transform: translateX(0); }
+    }
+  }
+}

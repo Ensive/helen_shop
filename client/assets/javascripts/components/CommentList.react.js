@@ -23,11 +23,12 @@ export default class CommentList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="u-clear">
         {this.context.store.comments().map(function (comment) {
           // return <Comment key={comment.id} author={comment.author} body={comment.body} rank={comment.rank} />;
           return <Comment key={comment.id} {... comment} />
         })}
+        <a href="#" className="hs_link -animate">View More</a>
       </div>
     );
   }
