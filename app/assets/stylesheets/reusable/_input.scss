@@ -1,14 +1,22 @@
+.hs_field,
+.hs_input,
+.hs_label {
+  display: block;
+  max-width: 500px;
+}
+
 // Wrapper for any input
 .hs_field {
-  display: block;
-  margin: 0 0 10px;
+  margin: 0 0 20px;
 }
 
 .hs_input {
+  background-color: $white;
   border: 1px solid #ccc;
   border-radius: 1px;
   font-size: 1.4rem;
   height: 38px;
+  margin: 4px 0 0;
   max-width: 500px;
   padding: 10px 8px;
   width: 100%;
@@ -20,9 +28,23 @@
 }
 
 .hs_label {
-  display: block;
   font-family: $sf-ui-text-medium;
-  margin: 0 0 8px;
+  //margin: 0 0 8px;
+
+  //&.-select {
+  //  position: relative;
+  //
+  //  &::after {
+  //    content: '\e90c';
+  //    display: block;
+  //    font-family: icomoon;
+  //    position: absolute;
+  //    right: 8px;
+  //    font-size: 1.6rem;
+  //    color: $gray-light;
+  //    top: 55%;
+  //  }
+  //}
 }
 
 .hs_button {
