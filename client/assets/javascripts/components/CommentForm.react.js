@@ -21,12 +21,16 @@ export default class CommentForm extends Component {
 
   render() {
     return (
-      <form>
-        <label className="hs_label">Author</label>
-        <input className="hs_input" type="text" name="author" onChange={this.handleFieldChange.bind(this)} value={this.state.author} />
-        <label>Comment</label>
-        <textarea name="body" value={this.state.body} onChange={this.handleFieldChange.bind(this)} />
-        <button type="submit" onClick={this.handleSubmit.bind(this)}>Submit</button>
+      <form className="form comment-form">
+        <p className="hs_field">
+          <label className="hs_label">Author</label>
+          <input className="hs_input" type="text" name="author" onChange={this.handleFieldChange.bind(this)} value={this.state.author} />
+        </p>
+        <p className="hs_field">
+          <label className="hs_label">Comment</label>
+          <textarea className="hs_input -text" name="body" value={this.state.body} onChange={this.handleFieldChange.bind(this)} />
+        </p>
+        <button className="hs_button" type="submit" onClick={this.handleSubmit.bind(this)}>Submit</button>
       </form>
     );
   }

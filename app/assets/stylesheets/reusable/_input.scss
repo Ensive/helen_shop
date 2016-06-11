@@ -1,12 +1,48 @@
+// Wrapper for any input
+.hs_field {
+  display: block;
+  margin: 0 0 10px;
+}
+
 .hs_input {
   border: 1px solid #ccc;
   border-radius: 1px;
-  height: 38px;
-  padding: 10px 8px;
   font-size: 1.4rem;
+  height: 38px;
+  max-width: 500px;
+  padding: 10px 8px;
+  width: 100%;
+  appearance: none;
+
+  &.-text {
+    height: 80px;
+  }
 }
 
 .hs_label {
   display: block;
+  font-family: $sf-ui-text-medium;
   margin: 0 0 8px;
+}
+
+.hs_button {
+  background-color: $red;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  font-family: $sf-ui-text-medium;
+  font-size: 1.4rem;
+  height: 36px;
+  max-width: 200px;
+  width: 100%;
+
+  &.-white {
+    background-color: $white;
+    border: 2px solid $red;
+    color: $red;
+  }
+
+  &.-gray {
+    background-color: #f0f0f0;
+  }
 }
