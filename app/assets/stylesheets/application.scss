@@ -23,7 +23,7 @@
 
 html {
   box-sizing: border-box;
-  font-family: $sf-ui-text-medium;
+  font-family: $sf-ui-text-regular;
   font-size: 62.5%;
   height: 100%;
 }
@@ -44,5 +44,5 @@ img {
 }
 
 @import 'base/layout';
-//@import 'reusable/*';
+@import 'reusable/*';
 @import 'components/*';

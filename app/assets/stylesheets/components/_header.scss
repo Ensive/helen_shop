@@ -11,6 +11,7 @@
       color: $gray-dark;
       display: block;
       float: left;
+      font-family: $sf-ui-text-medium;
       font-size: 1.6rem;
       height: 100%;
       line-height: 20px;
@@ -49,27 +50,26 @@
       }
 
       .header__text {
-        font-family: $sf-ui-text-regular;
         font-size: 1.4rem;
         text-transform: none;
         vertical-align: top;
       }
 
     .header__link--category {
-      text-transform: inherit;
       font-family: $sf-ui-text-regular;
       font-size: 1.4rem;
-      padding-top: 15px;
       padding-bottom: 11px;
+      padding-top: 15px;
+      text-transform: inherit;
 
       &.is-active {
         background-color: $white;
-        color: $gray-dark;
         border-bottom: 4px solid $red;
+        color: $gray-dark;
       }
     }
 
     .header__menu {
-      height: 50px;
       border-top: 1px solid #ccc;
+      height: 50px;
     }

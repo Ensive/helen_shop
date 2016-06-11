@@ -2,13 +2,12 @@
 <html>
   <head>
     <title>Интернет-магазин Helen Shop: одежда, обувь, аксессуары</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-
-    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
@@ -37,5 +36,10 @@
       </div>
 
     </main>
+
+    <!--[if lt IE 10]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <![endif]-->
+    <%= javascript_include_tag 'application' %>
   </body>
 </html>
