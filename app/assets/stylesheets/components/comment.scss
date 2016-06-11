@@ -1,16 +1,30 @@
 .comment {
+  font-family: $sf-ui-text-regular;
   margin: 0 0 20px;
-
   &:last-child { margin: 0; }
 }
 
+.comment__header {
+  display: flex;
+}
+
 .comment__rating {
-  margin: 0 0 10px;
-  font-size: 2.2rem;
   color: #f0a30a;
+  font-size: 1.6rem;
+  margin: 0 0 10px;
+  flex: 1 1 auto;
 
   &-icon {
     margin-right: 5px;
     &:last-child { margin-right: 0; }
   }
+}
+
+.comment__meta {
+  color: $gray-light;
+  line-height: 16px;
+}
+
+.comment__body {
+  line-height: 2.1rem;
 }

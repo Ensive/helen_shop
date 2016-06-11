@@ -21,9 +21,16 @@ export default class Comment extends React.Component {
   render() {
     return (
       <div className="comment">
-        <div className="comment__rating">{this.commentRank}</div>
-        <div>Author: {this.props.author}</div>
-        <div>Body: {this.props.body}</div>
+        <header className="comment__header">
+          <div className="comment__rating">{this.commentRank}</div>
+          <div className="comment__meta">
+            <span className="comment__author">{this.props.author}, </span>
+            <time datetime="">{this.props.created_at}</time>
+          </div>
+        </header>
+        <div className="comment__body">
+          {this.props.body}
+        </div>
       </div>
     );
   }
