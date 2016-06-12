@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { Component, PropTypes} from 'react';
+import CommentForm from './CommentForm.react';
+import CommentList from './CommentList.react';
 
-export default class Comment extends React.Component {
+export default class Comment extends Component {
   constructor() {
     super();
   }
@@ -20,7 +22,7 @@ export default class Comment extends React.Component {
 
   render() {
     return (
-      <div className="comment">
+      <li className="comment">
         <header className="comment__header">
           <div className="comment__rating">{this.commentRank}</div>
           <div className="comment__meta">
@@ -31,14 +33,17 @@ export default class Comment extends React.Component {
         <div className="comment__body">
           {this.props.body}
         </div>
-      </div>
+        <CommentForm parent_id={this.props.id} />
+        <CommentList parent_id={this.props.id} />
+      </li>
     );
   }
 }
 
 Comment.propTypes = {
-  author: React.PropTypes.string,
-  body: React.PropTypes.string,
-  rank: React.PropTypes.number
+  id: PropTypes.number,
+  author: PropTypes.string,
+  body: PropTypes.string,
+  rank: PropTypes.number
 };
 

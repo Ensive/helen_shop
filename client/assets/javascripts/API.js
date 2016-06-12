@@ -10,7 +10,8 @@ export default {
   },
   createComment(comment) {
     // TODO: set id dynamically
-    let productId = comment.product_id;
+    // let productId = comment.product_id;
+    let productId = 4;
     delete comment.product_id;
     Request.post(`/products/${productId}/comments`, { comment: comment })
       .then(response => response.json())

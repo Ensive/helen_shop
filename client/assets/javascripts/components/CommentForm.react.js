@@ -5,7 +5,7 @@ export default class CommentForm extends Component {
     super();
     this.defaultState = {
       // TODO: product id
-      product_id: 4,
+      product_id: '',
       author: '',
       body: '',
       stars: ''
@@ -21,7 +21,7 @@ export default class CommentForm extends Component {
 
     this.handleSubmit = (event) => {
       event.preventDefault();
-      this.context.actions.addComment(this.state);
+      this.context.actions.addComment(Object.assign({}, this.state, { parent_id: this.props.parent_id }));
       this.setState(this.defaultState);
     };
   }

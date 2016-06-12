@@ -29,7 +29,8 @@ export default class CommentSection extends Component {
   render() {
     return (
       <div>
-        <CommentList />
+        <CommentList parent_id={null} />
+        <a href="#" className="hs_link -animate">View More</a>
         <CommentForm />
       </div>
     );

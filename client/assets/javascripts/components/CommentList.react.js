@@ -23,10 +23,9 @@ export default class CommentList extends Component {
 
   render() {
     return (
-      <div className="u-clear">
-        {this.context.store.getComments().map(comment => <Comment key={comment.id} {... comment} />)}
-        <a href="#" className="hs_link -animate">View More</a>
-      </div>
+      <ul className="u-clear">
+        {this.context.store.getComments(this.props.parent_id).map(comment => <Comment key={comment.id} {... comment} />)}
+      </ul>
     );
   }
 }
