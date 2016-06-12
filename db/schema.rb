@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160527211239) do
+ActiveRecord::Schema.define(version: 20160612151337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20160527211239) do
     t.string   "ip"
     t.integer  "product_id"
     t.bigint   "stars"
-    t.boolean  "answer",                           null: false
+    t.boolean  "answer",     default: false,       null: false
     t.boolean  "approved",   default: false,       null: false
     t.integer  "rank",       default: 0,           null: false
     t.datetime "created_at",                       null: false

@@ -1,11 +1,11 @@
-import AppDispatcher from '../AppDispatcher';
-import AppConstants from '../AppConstants';
+import API from '../API';
+
 
 export default {
   addComment(comment) {
-    AppDispatcher.dispatch({
-      actionType: AppConstants.ADD_COMMENT,
-      comment
-    });
+    API.createComment(comment);
   }
+  // setComments() {
+  //   API.getAllComments();
+  // }
 }

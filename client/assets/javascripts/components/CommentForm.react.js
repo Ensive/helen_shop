@@ -3,7 +3,14 @@ import React, {Component, PropTypes} from 'react';
 export default class CommentForm extends Component {
   constructor() {
     super();
-    this.defaultState = { author: '', body: '', created_at: 'Few seconds' };
+    this.defaultState = {
+      // TODO: product id
+      product_id: 4,
+      author: '',
+      body: '',
+      stars: ''
+      // ancestry: ''
+    };
     this.state = this.defaultState;
 
     this.handleFieldChange = (event) => {
@@ -43,7 +50,7 @@ export default class CommentForm extends Component {
         <p className="hs_field">
           <label className="hs_label">
             Rate the product
-            <select value="" name="" id="" className="hs_input">
+            <select className="hs_input" name="stars" value={this.state.stars} onChange={this.handleFieldChange.bind(this)}>
               <option value="1">1 star</option>
               <option value="2">2 stars</option>
               <option value="3">3 stars</option>
