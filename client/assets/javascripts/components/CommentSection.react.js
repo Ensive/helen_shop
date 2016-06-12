@@ -9,6 +9,7 @@ export default class CommentSection extends Component {
     super();
     this.store = CommentStore;
     this.actions = Actions;
+    this.actions.setComments();
   }
 
   static get childContextTypes() {

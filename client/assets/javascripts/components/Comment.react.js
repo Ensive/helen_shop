@@ -6,16 +6,16 @@ export default class Comment extends React.Component {
   }
 
   get commentRank() {
-    let len = this.props.rank;
-    let rank = [];
+    let len = this.props.stars;
+    let stars = [];
 
     for (let i = 0; i < len; i++) {
-      rank.push(
+      stars.push(
         <i key={i} className="comment__rating-icon icon-appicons-15" />
       );
     }
 
-    return rank;
+    return stars;
   }
 
   render() {
@@ -25,7 +25,7 @@ export default class Comment extends React.Component {
           <div className="comment__rating">{this.commentRank}</div>
           <div className="comment__meta">
             <span className="comment__author">{this.props.author}, </span>
-            <time datetime="">{this.props.created_at}</time>
+            <time datetime="">{this.props.formattedDate}</time>
           </div>
         </header>
         <div className="comment__body">
