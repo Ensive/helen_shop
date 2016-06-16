@@ -1,4 +1,4 @@
-class Request {
+export default class Request {
 
   static token() {
     let el = document.querySelector('meta[name="csrf-token"]');
