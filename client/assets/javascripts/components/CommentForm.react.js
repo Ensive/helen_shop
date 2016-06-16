@@ -19,23 +19,26 @@ export default class CommentForm extends Component {
     };
     this.state = this.defaultState;
 
-    this.handleFieldChange = (event) => {
-      let prop = {};
-      prop[event.target.name] = event.target.value;
-      this.setState(prop);
-    };
-
-    this.handleSubmit = (event) => {
-      event.preventDefault();
-      this.context.actions.addComment(Object.assign({}, this.state, { parent_id: this.props.parentId }));
-      this.setState(this.defaultState);
-    };
+    this.onFieldChange = this.onFieldChange.bind(this);
+    this.onClickSubmit = this.onClickSubmit.bind(this);
   }
 
   static get contextTypes() {
     return {
       actions: PropTypes.object.isRequired
     }
+  }
+  
+  onFieldChange(event) {
+    let prop = {};
+    prop[event.target.name] = event.target.value;
+    this.setState(prop);
+  }
+
+  onClickSubmit(event) {
+    event.preventDefault();
+    this.context.actions.addComment(Object.assign({}, this.state, { parent_id: this.props.parentId }));
+    this.setState(this.defaultState);
   }
 
   render() {
@@ -46,19 +49,19 @@ export default class CommentForm extends Component {
           <p className="hs_field">
             <label className="hs_label">
               Author
-              <input className="hs_input" type="text" name="author" onChange={this.handleFieldChange.bind(this)} value={this.state.author} />
+              <input className="hs_input" type="text" name="author" onChange={this.onFieldChange} value={this.state.author} />
             </label>
           </p>
           <p className="hs_field">
             <label className="hs_label">
               Comment
-              <textarea className="hs_input -text" name="body" value={this.state.body} onChange={this.handleFieldChange.bind(this)} />
+              <textarea className="hs_input -text" name="body" value={this.state.body} onChange={this.onFieldChange} />
             </label>
           </p>
           <p className="hs_field">
             <label className="hs_label">
               Rate the product
-              <select className="hs_input" name="stars" value={this.state.stars} onChange={this.handleFieldChange.bind(this)}>
+              <select className="hs_input" name="stars" value={this.state.stars} onChange={this.onFieldChange}>
                 <option value="1">1 star</option>
                 <option value="2">2 stars</option>
                 <option value="3">3 stars</option>
@@ -67,7 +70,7 @@ export default class CommentForm extends Component {
               </select>
             </label>
           </p>
-          <button className="hs_button" type="submit" onClick={this.handleSubmit.bind(this)}>Submit</button>
+          <button className="hs_button" type="submit" onClick={this.onClickSubmit}>Submit</button>
         </form>
       </div>
     );
