@@ -63,7 +63,7 @@ export default class Comment extends Component {
           </blockquote>
         </div>
 
-        <button className="comment__button hs_button -animated -white -small" onClick={this.onReplyClick}>
+        <button className="comment__button hs_button -gray -small" onClick={this.onReplyClick}>
           {replyText}
         </button>
         <CommentForm

@@ -104,6 +104,12 @@
 
   &.-gray {
     background-color: #f0f0f0;
+    color: $gray-dark;
+
+    &:hover,
+    &:focus {
+      background-color: darken(#f0f0f0, 10%);
+    }
   }
 
   &.-small {
