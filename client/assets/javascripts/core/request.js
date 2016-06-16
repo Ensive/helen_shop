@@ -15,37 +15,30 @@ export default class Request {
   }
 
   static get(route) {
-    return fetch(
-      `${route}.json`,
-      {
-        method: 'get',
-        credentials: 'include',
-        headers: this.headers()
-      }
-    );
+    return this.xhr(route, null, 'get');
   }
 
   static post(route, params) {
-    // TODO: Shall we explicitly add .json ?
-    return fetch(
-      `${route}.json`,
-      {
-        method: 'post',
-        credentials: 'include',
-        headers: this.headers(),
-        body: JSON.stringify(params)
-      }
-    );
+    return this.xhr(route, params, 'post');
   }
 
   static put(route) {
+    return this.xhr(route, null, 'put');
+  }
+
+  static xhr(route, params = null, verb) {
     return fetch(
       `${route}.json`,
-      {
-        method: 'put',
-        credentials: 'include',
-        headers: this.headers()
-      }
+      Object.assign(
+        {
+          method: verb,
+          credentials: 'include',
+          headers: this.headers()
+        },
+        {
+          body: JSON.stringify(params)
+        })
+        .then(resp => resp.json())
     );
   }
 }

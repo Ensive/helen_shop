@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   # GET /products/:product_id/comments.json
   def index
     product_id = params[:product_id]
-    @comments = Product.find(product_id).comments.order(created_at: :desc).all
+    @comments = Product.find(product_id).comments.order('rank DESC, updated_at DESC').all
   end
 
   # POST /products/:product_id/comments.json

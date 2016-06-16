@@ -41,7 +41,7 @@ export default class Comment extends Component {
   get commentRank() {
     let len = this.props.stars;
     // todo: i18n
-    if (!len) return 'Rating was not given';
+    if (!len) return 'No rating';
     let stars = [];
 
     for (let i = 0; i < len; i++) {
