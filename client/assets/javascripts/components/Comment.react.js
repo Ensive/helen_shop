@@ -69,7 +69,7 @@ export default class Comment extends Component {
         <CommentForm
           parentId={this.props.id}
           isReplying={this.state.isReplying}
-          handleCommentSubmit={this.onCommentSubmit} />
+          onCommentSubmit={this.onCommentSubmit} />
         <CommentList parentId={this.props.id} />
       </li>
     );

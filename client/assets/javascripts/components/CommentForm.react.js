@@ -39,6 +39,9 @@ export default class CommentForm extends Component {
     event.preventDefault();
     this.context.actions.addComment(Object.assign({}, this.state, { parent_id: this.props.parentId }));
     this.setState(this.defaultState);
+    if (this.props.onCommentSubmit) {
+      this.props.onCommentSubmit();
+    }
   }
 
   render() {
