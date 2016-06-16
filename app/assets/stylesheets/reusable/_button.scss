@@ -24,7 +24,7 @@
       left: 0;
       position: absolute;
       top: 0;
-      transform: translateX(-120%) skewX(45deg);
+      transform: translateX(-200%) skewX(45deg);
       transition: transform .3s ease;
       width: 120%;
       z-index: -1;
@@ -63,7 +63,6 @@
     }
   }
 
-  &.-small {
-    max-width: 100px;
-  }
+  &.-small { max-width: 80px; }
+  &.-tiny { max-width: 40px; }
 }

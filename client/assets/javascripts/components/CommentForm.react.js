@@ -6,6 +6,10 @@ const propTypes = {
   isReplying: PropTypes.bool
 };
 
+const contextTypes = {
+  actions: PropTypes.object.isRequired
+};
+
 export default class CommentForm extends Component {
   constructor(props) {
     super();
@@ -14,19 +18,14 @@ export default class CommentForm extends Component {
       product_id: '',
       author: '',
       body: '',
-      stars: ''
+      stars: '',
+      rank: ''
       // ancestry: ''
     };
     this.state = this.defaultState;
 
     this.onFieldChange = this.onFieldChange.bind(this);
     this.onClickSubmit = this.onClickSubmit.bind(this);
-  }
-
-  static get contextTypes() {
-    return {
-      actions: PropTypes.object.isRequired
-    }
   }
   
   onFieldChange(event) {
@@ -81,3 +80,4 @@ export default class CommentForm extends Component {
 }
 
 CommentForm.propTypes = propTypes;
+CommentForm.contextTypes = contextTypes;

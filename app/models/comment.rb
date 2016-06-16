@@ -5,6 +5,6 @@ class Comment < ApplicationRecord
 
   def self.upvote(id)
     comment = find(id)
-    comment.update_attributes(rank: comment.rank + 1)
+    comment.update_attributes(rank: comment.rank.to_i + 1)
   end
 end

@@ -44,5 +44,13 @@
 }
 
 .comment__button {
-  margin: 10px 0 0;
+  margin: 10px 0 0 5px;
+}
+
+.comment__rank {
+  margin: 0 0 0 10px;
+  font-family: $sf-ui-text-medium;
+
+  &--green { color: #0fa52f; }
+  &--red { color: $red; }
 }

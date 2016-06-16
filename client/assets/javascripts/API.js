@@ -20,7 +20,7 @@ export default {
   upvoteComment(comment) {
     // TODO: set id dynamically
     let productId = 4;
-    Request.put(`/products/${productId}/comments/${comment.id}`)
+    Request.put(`/products/${productId}/comments/${comment.id}/upvote`)
       .then(response => response.json())
       .then(comment => ServerActions.upvoteComment(comment));
   }

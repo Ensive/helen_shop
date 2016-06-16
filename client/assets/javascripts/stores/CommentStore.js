@@ -27,6 +27,10 @@ class CommentEventEmitter extends EventEmitter {
     this._comments = comments;
   }
 
+  upvote(comment) {
+    this._comments.find(c => c.id === comment.id).rank++;
+  }
+
   addChangeListener(callback) {
     this.on(AppConstants.CHANGE_EVENT, callback);
   }
@@ -52,6 +56,10 @@ AppDispatcher.register((payload) => {
       break;
     case AppConstants.RECEIVED_COMMENTS:
       CommentStore.setComments(payload.comments);
+      CommentStore.emitChange();
+      break;
+    case AppConstants.UPVOTE_COMMENT:
+      CommentStore.upvote(payload.comment);
       CommentStore.emitChange();
       break;
     default:

@@ -7,8 +7,12 @@ const propTypes = {
   product_id: PropTypes.number,
   author: PropTypes.string,
   body: PropTypes.string,
-  stars: PropTypes.number
-  // rank: PropTypes.number
+  stars: PropTypes.number,
+  rank: PropTypes.number
+};
+
+const contextTypes = {
+  actions: PropTypes.object.isRequired
 };
 
 export default class Comment extends Component {
@@ -18,6 +22,7 @@ export default class Comment extends Component {
 
     this.onReplyClick = this.onReplyClick.bind(this);
     this.onCommentSubmit = this.onCommentSubmit.bind(this);
+    this.onUpvote = this.onUpvote.bind(this);
   }
 
   onReplyClick() {
@@ -26,6 +31,11 @@ export default class Comment extends Component {
 
   onCommentSubmit() {
     this.setState({ isReplying: false });
+  }
+
+  onUpvote(event) {
+    event.preventDefault();
+    this.context.actions.upvoteComment(this.props);
   }
 
   get commentRank() {
@@ -46,6 +56,7 @@ export default class Comment extends Component {
   render() {
     // todo: i18n
     const replyText = this.state.isReplying ? 'Hide' : 'Reply';
+    let rankClass = `comment__rank${this.props.rank > 0 ? ' comment__rank--green' : (this.props.rank === 0 ? '' : ' comment__rank--red')}`;
     return (
       <li className="comment">
         <header className="comment__header">
@@ -63,9 +74,11 @@ export default class Comment extends Component {
           </blockquote>
         </div>
 
-        <button className="comment__button hs_button -gray -small" onClick={this.onReplyClick}>
+        <button onClick={this.onReplyClick} className="comment__button hs_button -gray -small">
           {replyText}
         </button>
+        <button onClick={this.onUpvote} className="comment__button comment__button--upvote hs_button -gray -tiny">+1</button>
+        <span className={rankClass}>{this.props.rank} {this.props.rank === 1 ? 'vote' : 'votes'}</span>
         <CommentForm
           parentId={this.props.id}
           isReplying={this.state.isReplying}
@@ -77,3 +90,4 @@ export default class Comment extends Component {
 }
 
 Comment.propTypes = propTypes;
+Comment.contextTypes = contextTypes;

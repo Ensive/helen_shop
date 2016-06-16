@@ -14,7 +14,7 @@ export default {
       comment
     });
   },
-  upvotedComment(comment) {
+  upvoteComment(comment) {
     AppDispatcher.dispatch({
       actionType: AppConstants.UPVOTE_COMMENT,
       comment

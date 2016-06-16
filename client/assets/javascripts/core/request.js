@@ -46,6 +46,6 @@ export default class Request {
         credentials: 'include',
         headers: this.headers()
       }
-    )
+    );
   }
 }
