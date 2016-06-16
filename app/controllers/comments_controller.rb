@@ -12,6 +12,11 @@ class CommentsController < ApplicationController
     @comment = Comment.create(comment_params.merge(product_id: params[:product_id]))
   end
 
+  def upvote
+    Comment.upvote(params[:comment_id])
+    @comment = Comment.find(params[:comment_id])
+  end
+
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params

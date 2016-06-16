@@ -7,5 +7,8 @@ export default {
   },
   setComments() {
     API.getAllComments();
+  },
+  upvoteComment(comment) {
+    API.upvoteComment(comment);
   }
 }

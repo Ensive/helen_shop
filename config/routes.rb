@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :products do
-    resources :comments
+    resources :comments do
+      put 'upvote', to: 'comments#upvote'
+    end
   end
 
   root 'products#index'

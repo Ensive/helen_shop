@@ -13,5 +13,11 @@ export default {
       actionType: AppConstants.ADD_COMMENT,
       comment
     });
+  },
+  upvotedComment(comment) {
+    AppDispatcher.dispatch({
+      actionType: AppConstants.UPVOTE_COMMENT,
+      comment
+    });
   }
 }
