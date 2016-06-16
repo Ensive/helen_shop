@@ -2,7 +2,10 @@
   color: $blue;
   text-decoration: none;
 
-  &:hover { text-decoration: underline; }
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
 
   &.-animate {
     display: block;
@@ -21,7 +24,8 @@
       transition: transform .3s ease;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       text-decoration: none;
       &::after { transform: translateX(0); }
     }

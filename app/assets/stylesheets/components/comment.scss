@@ -12,11 +12,12 @@
 }
 
 .comment__rating {
-  color: #f0a30a;
-  font-size: 1.6rem;
+  color: $gray-light;
   flex: 1 1 auto;
 
   &-icon {
+    color: #f0a30a;
+    font-size: 1.6rem;
     margin-right: 5px;
     &:last-child { margin-right: 0; }
   }
@@ -40,4 +41,8 @@
 
 .comment__body {
   line-height: 2.1rem;
+}
+
+.comment__button {
+  margin: 10px 0 0;
 }

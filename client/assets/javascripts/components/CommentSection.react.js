@@ -28,11 +28,12 @@ export default class CommentSection extends Component {
 
   render() {
     return (
-      <div>
-        <CommentList parent_id={null} />
+      <section>
+        <CommentList parentId={null} />
         <a href="#" className="hs_link -animate">View More</a>
-        <CommentForm />
-      </div>
+        <div className="u-clear"></div>
+        <CommentForm isReplying />
+      </section>
     );
   }
 }

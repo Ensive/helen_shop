@@ -1,11 +1,8 @@
-.u-clear {
-  @include clearfix();
-}
+.u-clear { @include clearfix(); }
 
-.u-left {
-  float: left;
-}
+.u-left { float: left; }
+.u-right { float: right; }
 
-.u-right {
-  float: right;
+.u-hidden {
+  display: none;
 }

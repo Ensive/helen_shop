@@ -23,8 +23,8 @@ export default class CommentList extends Component {
 
   render() {
     return (
-      <ul className="u-clear">
-        {this.context.store.getComments(this.props.parent_id).map(comment => <Comment key={comment.id} {... comment} />)}
+      <ul className="comment-list u-clear">
+        {this.context.store.getComments(this.props.parentId).map(comment => <Comment key={comment.id} {... comment} />)}
       </ul>
     );
   }

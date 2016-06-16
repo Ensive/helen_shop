@@ -1,4 +1,9 @@
 .comment-list {
-  //padding: 0 0 20px;
-  //border-bottom: 1px solid #ccc;
+  > .comment > .comment-list {
+    padding-left: 20px;
+
+    .comment {
+      margin: 20px 0 0 0;
+    }
+  }
 }
