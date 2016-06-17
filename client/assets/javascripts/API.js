@@ -2,11 +2,14 @@ import ServerActions from './actions/ServerActions';
 import Request from './core/request'
 
 export default {
-  getAllComments() {
+  // getAllComments() {
     // TODO: set id dynamically
-    let productId = 4;
-    Request.get(`/products/${productId}/comments`)
-      .then(comments => ServerActions.receivedComments(comments));
+    // let productId = 4;
+    // Request.get(`/products/${productId}/comments`)
+    //   .then(comments => ServerActions.receivedComments(comments));
+  // },
+  setComments(comments) {
+    ServerActions.receivedComments(comments);
   },
   createComment(comment) {
     // TODO: set id dynamically

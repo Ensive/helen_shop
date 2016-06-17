@@ -22,7 +22,9 @@
     <%= t('general.user_ratings') %>
   </h3>
 
-  <div id="comment-list"></div>
+  <!--<div id="comment-list"></div>-->
+  <% props = "{ productId: #{@product.id}, comments: #{raw(render(template: 'comments/index.json.jbuilder' ))} }" %>
+  <%= react_component('CommentSection', 'cs', props) %>
 </div>
 
 <!--<p>-->

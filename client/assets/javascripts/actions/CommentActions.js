@@ -4,8 +4,9 @@ export default {
   addComment(comment) {
     API.createComment(comment);
   },
-  setComments() {
-    API.getAllComments();
+  setComments(comments) {
+    // API.getAllComments();
+    API.setComments(comments);
   },
   upvoteComment(comment) {
     API.upvoteComment(comment);

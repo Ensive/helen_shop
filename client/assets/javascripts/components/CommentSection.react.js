@@ -5,11 +5,11 @@ import CommentStore from '../stores/CommentStore';
 import Actions from '../actions/CommentActions';
 
 export default class CommentSection extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.store = CommentStore;
     this.actions = Actions;
-    this.actions.setComments();
+    this.actions.setComments(props.comments);
   }
 
   static get childContextTypes() {
