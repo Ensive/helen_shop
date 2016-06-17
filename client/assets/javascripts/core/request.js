@@ -27,18 +27,20 @@ export default class Request {
   }
 
   static xhr(route, params = null, verb) {
-    return fetch(
-      `${route}.json`,
-      Object.assign(
-        {
-          method: verb,
-          credentials: 'include',
-          headers: this.headers()
-        },
-        {
-          body: JSON.stringify(params)
-        })
-        .then(resp => resp.json())
-    );
+    let defaults = {
+      method: verb,
+      credentials: 'include',
+      headers: this.headers()
+    };
+
+    let options = {};
+
+    if (verb === 'post') {
+      options = Object.assign({}, defaults, { body: JSON.stringify(params) });
+    } else {
+      options = Object.assign({}, defaults);
+    }
+
+    return fetch(`${route}.json`, options).then(response => response.json());
   }
 }
