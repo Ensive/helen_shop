@@ -1,0 +1,2 @@
+web: rails s -p 4000
+client: sh -c 'cd client && webpack -w --config webpack.rails.config.js'
