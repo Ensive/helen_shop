@@ -26,6 +26,10 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  # compressor
+  # config.assets.js_compressor = :uglifier
+  config.assets.js_compressor = Uglifier.new(copyright: false)
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
@@ -40,7 +44,7 @@ Rails.application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  config.assets.debug = true
+  config.assets.debug = false
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
