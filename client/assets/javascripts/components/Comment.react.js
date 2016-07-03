@@ -65,7 +65,7 @@ export default class Comment extends Component {
             <span className="comment__author">
               <cite>{this.props.author}, </cite>
             </span>
-            <time datetime="">{this.props.formattedDate}</time>
+            <time dateTime="">{this.props.formattedDate}</time>
           </div>
         </header>
         <div className="comment__body">
