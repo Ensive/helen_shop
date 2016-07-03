@@ -1,5 +1,5 @@
 module ReactHelper
-  def react_component(component, id, props)
+  def client(component, id, props)
     sc = script(component, id, props)
     "<div id='#{id}'></div>#{sc}".html_safe
   end
