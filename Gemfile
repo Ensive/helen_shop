@@ -34,6 +34,16 @@ gem 'foreman'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+
+  # gems for testing
+  gem 'capybara'
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'capybara-screenshot'
+  gem 'poltergeist'
+  gem 'launchy'
+  gem 'simplecov'
+  gem 'database_cleaner'
 end
 
 group :development do
