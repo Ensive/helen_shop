@@ -10,7 +10,7 @@
     <% @products.each do |product| %>
       <div class="products-item">
         <%= link_to product, class: 'products-item__link products-item__link--image-wrapper' do %>
-          <%= image_tag product.image_url, class: 'products-item__image' %>
+          <%= image_tag product.image_url, class: 'products-item__image' if product.image_url.present? %>
         <% end %>
 
         <div class="products-item__metadata u-clear">

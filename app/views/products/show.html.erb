@@ -4,7 +4,7 @@
 
 <div class="product u-clear">
   <div class="product__preview">
-    <%= image_tag @product.image_url, class: '' %>
+    <%= image_tag @product.image_url, class: '' if @product.image_url.present? %>
   </div>
 
   <div class="product__details-wrapper">
