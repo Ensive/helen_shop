@@ -6,11 +6,12 @@ var express = require('express');
 var app = express();
 
 var React = require('react');
+var ReactDOMServer = require('react-dom/server');
 app.use(bodyParser.json());
 
 function renderToString(component, props, callback) {
   var componentToRender = require(`./components/${component}.react`);
-  callback(React.renderToString(React.createElement(componentToRender, props)));
+  callback(ReactDOMServer.renderToString(React.createElement(componentToRender, props)));
 }
 
 app.post('/', (req, res) => {

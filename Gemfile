@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'httparty'
 gem 'ancestry'
 gem 'foreman'
 # TODO: install
