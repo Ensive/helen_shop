@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   has_many :comments, dependent: :destroy
-  validates :sku, :name, :category_id, :description, presence: true
+  validates :sku, :name, :category_id, :description, :price, presence: true
   validates :price, numericality:  {greater_than_or_equal_to: 0.01}
   validates :name, uniqueness: true
   validates :image_url, allow_blank: true, format: {
