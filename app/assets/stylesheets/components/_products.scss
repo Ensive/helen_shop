@@ -62,5 +62,9 @@
 
       &:hover {
         cursor: pointer;
+
+        > i:before {
+          content: '\e906';
+        }
       }
     }

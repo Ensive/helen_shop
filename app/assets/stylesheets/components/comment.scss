@@ -21,6 +21,10 @@
     margin-right: 5px;
     &:last-child { margin-right: 0; }
   }
+
+  &-icon--gray {
+    color: #ccc;
+  }
 }
 
 .comment__meta {

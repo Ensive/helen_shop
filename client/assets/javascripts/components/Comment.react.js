@@ -50,6 +50,14 @@ export default class Comment extends Component {
       );
     }
 
+    if (len < 5) {
+      for (let k = 0; k < 5 - len; k++) {
+        stars.push(
+          <i key={k + len} className="comment__rating-icon comment__rating-icon--gray icon-appicons-15" />
+        );
+      }
+    }
+
     return stars;
   }
 
