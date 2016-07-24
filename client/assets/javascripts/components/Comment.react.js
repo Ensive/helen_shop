@@ -45,16 +45,12 @@ export default class Comment extends Component {
     let stars = [];
 
     for (let i = 0; i < len; i++) {
-      stars.push(
-        <i key={i} className="comment__rating-icon icon-appicons-15" />
-      );
+      stars.push(<i key={i} className="comment__rating-icon icon-appicons-15" />);
     }
 
     if (len < 5) {
       for (let k = 0; k < 5 - len; k++) {
-        stars.push(
-          <i key={k + len} className="comment__rating-icon comment__rating-icon--gray icon-appicons-15" />
-        );
+        stars.push(<i key={k+len} className="comment__rating-icon comment__rating-icon--gray icon-appicons-15" />);
       }
     }
 
