@@ -33,20 +33,39 @@ ActiveRecord::Migration.maintain_test_schema!
 # browser testing
 Capybara.asset_host = 'http://localhost:4000'
 Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, debug: false, inspector: true, js_errors: true, window_size: [1024, 768])
+  Capybara::Poltergeist::Driver.new(
+    app,
+    timeout: 60,
+    phantom_js_logger: File.open(File::NULL),
+    phantom_js_options: %w(--load-images=false --ignore-ssl-errors=true),
+    debug: false,
+    inspector: true,
+    js_errors: true,
+    window_size: [1024, 768]
+    )
 end
 Capybara.javascript_driver = :poltergeist
 
 RSpec.configure do |config|
+  Capybara.default_driver = :poltergeist
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
-  config.include Capybara::DSL
+  config.include Capybara::DSL, :type => :feature
+
+  # TODO: delete?
+  # config.include Capybara::RSpecMatchers, :type => :feature
+  # config.include Capybara::RSpecMatchers, :type => :view
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = false
+
+  # TODO: delete?
+  # config.before(:suite) do
+  #   Capybara.current_session.driver.headers = { 'Accept-Language' => 'ru' }
+  # end
 
   # DB cleaning
   config.before(:suite) do

@@ -6,3 +6,12 @@
 .u-hidden {
   display: none;
 }
+
+.u-divider {
+  border: 0;
+  border-top: 1px solid #ccc;
+  height: 0;
+  margin: 12px auto 0;
+  width: 100%;
+  @include clearfix();
+}

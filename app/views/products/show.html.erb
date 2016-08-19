@@ -1,55 +1,9 @@
-<!--<p id="notice">-->
-  <%#= notice %>
-<!--</p>-->
+<% product_props = JSON.parse(raw(render(template: 'products/show.json.jbuilder'))) %>
+<%= isomorphic('Product', 'product', product_props) %>
 
-<div class="product u-clear">
-  <div class="product__preview">
-    <%= image_tag @product.image_url, class: '' if @product.image_url.present? %>
-  </div>
-
-  <div class="product__details-wrapper">
-    <%= @product %>
-  </div>
-
-  <!-- related stuff-->
-  <div class="product__related-wrapper u-clear">
-
-  </div>
-</div>
-
-<div class="product-comments">
-  <h3 class="product-comments__title">
-    <%= t('general.user_ratings') %>
-  </h3>
-
-  <!--<div id="comment-list"></div>-->
-  <% props = JSON.parse("{\"productId\": #{@product.id}, \"comments\": #{raw(render(template: 'comments/index.json.jbuilder' ))} }") %>
-  <% if params[:client].present? %>
-    <%= client('CommentSection', 'cs', props) %>
-  <% else %>
-    <%= isomorphic('CommentSection', 'cs', props) %>
-  <% end %>
-</div>
-
-<!--<p>-->
-  <!--<strong>Name:</strong>-->
-  <%#= @product.name %>
-<!--</p>-->
-
-<!--<p>-->
-  <!--<strong>Description:</strong>-->
-  <%#= @product.description %>
-<!--</p>-->
-
-<!--<p>-->
-  <!--<strong>Image url:</strong>-->
-  <%#= @product.image_url %>
-<!--</p>-->
-
-<!--<p>-->
-  <!--<strong>Price:</strong>-->
-  <%#= @product.price %>
-<!--</p>-->
-
-<%#= link_to 'Edit', edit_product_path(@product) %>
-<%#= link_to 'Back', products_path %>
+<% props = JSON.parse("{\"productId\": #{@product.id}, \"comments\": #{raw(render(template: 'comments/index.json.jbuilder' ))} }") %>
+<% if params[:client].present? %>
+  <%= client('CommentSection', 'cs', props) %>
+<% else %>
+  <%= isomorphic('CommentSection', 'cs', props) %>
+<% end %>

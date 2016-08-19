@@ -17,6 +17,9 @@
 .byebug_history
 coverage
 
+# Ignore public assets
+public/assets
+
 # IDE stuff
 .idea
 .DS_Store

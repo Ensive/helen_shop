@@ -13,6 +13,7 @@ module HelenShop
     # -- all .rb files in that directory are automatically loaded.
 
     config.i18n.default_locale = :'ru'
+    config.encoding = 'utf-8'
 
     # fonts & icons
     # TODO: make sure, that we need this
