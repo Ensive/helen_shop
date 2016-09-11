@@ -1,9 +1,9 @@
 <% product_props = JSON.parse(raw(render(template: 'products/show.json.jbuilder'))) %>
 <%= isomorphic('Product', 'product', product_props) %>
 
-<% props = JSON.parse("{\"productId\": #{@product.id}, \"comments\": #{raw(render(template: 'comments/index.json.jbuilder' ))} }") %>
+<% comments_props = JSON.parse("{\"productId\": #{@product.id}, \"comments\": #{raw(render(template: 'comments/index.json.jbuilder' ))} }") %>
 <% if params[:client].present? %>
-  <%= client('CommentSection', 'cs', props) %>
+  <%= client('CommentSection', 'comment-section', comments_props) %>
 <% else %>
-  <%= isomorphic('CommentSection', 'cs', props) %>
+  <%= isomorphic('CommentSection', 'comment-section', comments_props) %>
 <% end %>
