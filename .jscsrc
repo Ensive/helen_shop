@@ -2,4 +2,5 @@
   "disallowMultipleVarDecl": false,
   "preset": "airbnb",
   "fileExtensions": [".js", ".jsx", ".es6"],
+  "requireTrailingComma": false
 }

@@ -8,16 +8,18 @@ export default {
       comments
     });
   },
+
   receivedOneComment(comment) {
     AppDispatcher.dispatch({
       actionType: AppConstants.ADD_COMMENT,
       comment
     });
   },
+
   upvoteComment(comment) {
     AppDispatcher.dispatch({
       actionType: AppConstants.UPVOTE_COMMENT,
       comment
     });
   }
-}
+};
