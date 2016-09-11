@@ -4,7 +4,7 @@ import CommentList from './CommentList.react';
 
 const propTypes = {
   id: PropTypes.number,
-  product_id: PropTypes.number,
+  productId: PropTypes.number,
   author: PropTypes.string,
   body: PropTypes.string,
   stars: PropTypes.number,
@@ -84,6 +84,7 @@ export default class Comment extends Component {
         <button onClick={this.onUpvote} className="comment__button comment__button--upvote hs_button -gray -tiny">+1</button>
         <span className={rankClass}>{this.props.rank} {this.props.rank === 1 ? 'vote' : 'votes'}</span>
         <CommentForm
+          productId={this.props.productId}
           parentId={this.props.id}
           isReplying={this.state.isReplying}
           onCommentSubmit={this.onCommentSubmit} />

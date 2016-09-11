@@ -22,11 +22,12 @@ export default class Product extends Component {
     return (
       <div className="product u-clear">
         <div>
-          <ProductGallery image={this.props.image_url}/>
+          <ProductGallery image={this.props.imageUrl}/>
           <ProductDescription name={this.props.name} price={this.props.price} currency="грн" />
         </div>
         <ProductRelated />
       </div>
+
       // About Shop Component
     );
   }

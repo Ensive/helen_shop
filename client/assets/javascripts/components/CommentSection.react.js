@@ -16,23 +16,24 @@ export default class CommentSection extends Component {
     return {
       store: PropTypes.object.isRequired,
       actions: PropTypes.object.isRequired
-    }
+    };
   }
 
   getChildContext() {
     return {
       store: this.store,
       actions: this.actions
-    }
+    };
   }
 
   render() {
     return (
-      <section>
+      <section className="product-comments">
+        <h3 className="product-comments__title">User Ratings</h3>
         <CommentList parentId={null} />
         <a href="#" className="hs_link -animate">View More</a>
         <div className="u-clear"></div>
-        <CommentForm isReplying />
+        <CommentForm isReplying productId={this.props.productId} />
       </section>
     );
   }

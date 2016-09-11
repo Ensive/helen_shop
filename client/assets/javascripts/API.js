@@ -11,17 +11,17 @@ export default {
   setComments(comments) {
     ServerActions.receivedComments(comments);
   },
+
   createComment(comment) {
-    // TODO: set id dynamically
-    let productId = 4;
-    delete comment.product_id;
-    Request.post(`/products/${productId}/comments`, { comment: comment })
-      .then(comment => ServerActions.receivedOneComment(comment));
+    Request.post(`/products/${comment.productId}/comments`, { comment: comment })
+      .then(comment => ServerActions.receivedOneComment(comment))
+      .catch(() => console.log('Error...'));
   },
+
   upvoteComment(comment) {
     // TODO: set id dynamically
     let productId = 4;
     Request.put(`/products/${productId}/comments/${comment.id}/upvote`)
       .then(comment => ServerActions.upvoteComment(comment));
   }
-}
+};

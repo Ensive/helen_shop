@@ -15,7 +15,7 @@ export default class ProductGallery extends Component {
     let imageUrl = `/assets/${image}`;
     let imgEl = '';
 
-    if (image && (image !== '' || image !== 'undefined') && image.match(/jpg|png|jpeg/gi)) {
+    if (image && image.match(/jpg|png|jpeg/gi)) {
       imgEl = <img src={imageUrl} />;
     }
 
