@@ -11,4 +11,18 @@ class Product < ApplicationRecord
   def to_s
     name
   end
+
+  def average_rating
+    total_stars = 0
+
+    self.comments.where.not(stars: nil).each do |review|
+      total_stars += review.stars.to_i
+    end
+
+    self.total_ratings == 0 ? 0 : total_stars / total_ratings
+  end
+
+  def total_ratings
+    self.comments.where.not(stars: nil).count
+  end
 end
