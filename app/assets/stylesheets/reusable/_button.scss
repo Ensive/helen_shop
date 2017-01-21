@@ -11,6 +11,10 @@
   transition: color .3s ease, background-color .3s ease;
   width: 100%;
 
+  &.-buy {
+    margin: 20px 0 0;
+  }
+
   &.-animated {
     overflow: hidden;
     position: relative;
