@@ -40,7 +40,7 @@ Capybara.register_driver :poltergeist do |app|
     phantom_js_options: %w(--load-images=false --ignore-ssl-errors=true),
     debug: false,
     inspector: true,
-    js_errors: true,
+    js_errors: false,
     window_size: [1024, 768]
   )
 end

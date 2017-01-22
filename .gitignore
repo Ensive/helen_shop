@@ -6,6 +6,9 @@
 
 # Ignore bundler config.
 /.bundle
+client-bundle.js
+client-bundle.js.map
+yarn.lock
 
 # Ignore all logfiles and tempfiles.
 /log/*

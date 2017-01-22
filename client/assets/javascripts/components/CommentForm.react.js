@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import Button from './Button.react';
 
 const propTypes = {
   onCommentSubmit: PropTypes.func,
@@ -82,7 +83,7 @@ export default class CommentForm extends Component {
               </select>
             </label>
           </p>
-          <button className="hs_button" type="submit" onClick={this.onClickSubmit}>Submit</button>
+          <Button type='submit' onClick={this.onClickSubmit}>Submit</Button>
         </form>
       </div>
     );
