@@ -1,4 +1,5 @@
-require('babel-register');
+// require('babel-register');
+require('babel-core/register')({ experimental: true });
 
 var bodyParser = require('body-parser');
 
