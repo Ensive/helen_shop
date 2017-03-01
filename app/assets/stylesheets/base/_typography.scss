@@ -10,6 +10,9 @@
   // case
   &--uppercase { text-transform: uppercase; }
 
+  // color
+  &--red { color: $red; }
+
   // margin
   &--margin-top-10 {
     margin-top: 10px;
