@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export default class Button extends Component {
-  constructor(props) {
-    super(props);
-  }
+const { string, func, any } = PropTypes;
+const propTypes = {
+  mod: string,
+  type: string,
+  onClick: func.isRequired,
+  children: any
+};
 
-  render() {
-    var btnCss = this.props.mod ? 'hs_button -' + this.props.mod : 'hs_button';
-
-    return (
-      <button className={btnCss} type={this.props.type} onClick={this.props.onClick}>
-        {this.props.children}
-      </button>
-    )
-  }
+function Button ({ mod, type, onClick, children}) {
+  const btnCss = mod ? 'hs_button -' + mod : 'hs_button';
+  return <button className={btnCss} type={type} onClick={onClick}>{children}</button>
 }
+
+Button.propTypes = propTypes;
+
+export default Button
