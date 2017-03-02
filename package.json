@@ -19,6 +19,7 @@
     "express": "^4.12.4",
     "flux": "^2.1.1",
     "imports-loader": "^0.6.3",
+    "isomorphic-fetch": "^2.2.1",
     "loader-utils": "^0.2.7",
     "moment": "^2.13.0",
     "react": "^15.1.0",
