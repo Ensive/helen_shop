@@ -1,17 +1,16 @@
 // require('babel-register');
 require('babel-core/register')({ experimental: true });
 
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
+const React = require('react');
+const ReactDOMServer = require('react-dom/server');
 
-var express = require('express');
-var app = express();
-
-var React = require('react');
-var ReactDOMServer = require('react-dom/server');
 app.use(bodyParser.json());
 
 function renderToString(component, props, callback) {
-  var componentToRender = require(`./components/${component}.react`);
+  const componentToRender = require(`./components/${component}.react`);
   callback(ReactDOMServer.renderToString(React.createElement(componentToRender, props)));
 }
 
