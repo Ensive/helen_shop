@@ -1,5 +1,9 @@
 class Product < ApplicationRecord
   has_many :comments, dependent: :destroy
+  has_many :order_items
+
+  before_destroy :ensure_not_referenced_by_any_order_item
+
   validates :sku, :name, :category_id, :description, :price, presence: true
   validates :price, numericality:  {greater_than_or_equal_to: 0.01}
   validates :name, uniqueness: true
@@ -24,5 +28,16 @@ class Product < ApplicationRecord
 
   def total_ratings
     self.comments.where.not(stars: nil).count
+  end
+
+  private
+
+  def ensure_not_referenced_by_any_order_item
+    if order_items.empty?
+      true
+    else
+      errors.add(:base, 'there are remaining items')
+      false
+    end
   end
 end

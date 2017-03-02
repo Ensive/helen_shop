@@ -19,13 +19,15 @@
           <!-- TODO: make icon as a pseudo element-->
           <i class="header__icon icon-appicons-07"></i>
         </a>
-        <a class="header__link header__link--icon" href="#" aria-label="<%= t 'general.my_cart' %>">
-          <!-- TODO: make icon as a pseudo element-->
-          <i class="header__icon icon-appicons-06"></i>
-          <span class="header__text">
-            0 items
-          </span>
-        </a>
+        <%
+          cart_props = {
+            initialCount: current_order.order_items.size,
+            t: { my_cart: t('general.my_cart') },
+            products: current_products,
+            totalPrice: current_order.subtotal
+          }
+        %>
+        <%= isomorphic('CartContainer', 'cart-section', cart_props) %>
       </div>
     </div>
 

@@ -1,38 +1,48 @@
 import React, { Component, PropTypes } from 'react';
 import ProductPrice from './ProductPrice.react';
+import Button from './Button.react';
 
+const { string } = PropTypes;
 const propTypes = {
-  name: PropTypes.string
+  name: string,
+  desc: string
 };
 
-export default class ProductDescription extends Component {
-
-  getOldPrice() {
-    return `${Math.floor(this.props.price)} ${this.props.currency}.`;
+function ProductDescription ({ name, desc, price, currency, addProduct }) {
+  function getOldPrice (price, currency) {
+    return `${Math.floor(price)} ${currency}.`;
   }
 
-  getNewPrice() {
-    return `${Math.floor(this.props.price - this.props.price * 0.1)} ${this.props.currency}.`;
+  function getNewPrice (price, currency) {
+    return `${Math.floor(price - price * 0.1)} ${currency}.`;
   }
 
-  render() {
-    return (
-      <div className="product__details-wrapper">
-        <div className="product__details">
+  return (
+    <div className='product__details-wrapper'>
+      <div className='product__details'>
 
-          <h1 className="product__details-name">
-            <span className="text text--medium text--uppercase text--22">
-              {this.props.name}
-            </span>
-          </h1>
+        <h1 className='product__details-name'>
+          <span className='text text--medium text--uppercase text--22'>
+            {name}
+          </span>
+        </h1>
 
-          <ProductPrice oldPrice={this.getOldPrice()} newPrice={this.getNewPrice()} />
+        <ProductPrice oldPrice={getOldPrice(price, currency)} newPrice={getNewPrice(price, currency)} />
 
-          <hr className="u-divider"/>
-        </div>
+        <hr className='u-divider' />
+
+        <p className='text text--margin-top-10'>
+          {desc}
+        </p>
+
+        <Button mod='buy' onClick={addProduct}>
+          <span className='text text--18'>Add to Cart</span>
+        </Button>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 ProductDescription.propTypes = propTypes;
+
+export default ProductDescription

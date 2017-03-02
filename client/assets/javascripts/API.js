@@ -23,5 +23,12 @@ export default {
     let productId = 4;
     Request.put(`/products/${productId}/comments/${comment.id}/upvote`)
       .then(comment => ServerActions.upvoteComment(comment));
+  },
+
+  addProduct(product) {
+    Request.post(`/order_items`, { order_item: product })
+      .then(product => ServerActions.receivedOrderItem(product));
   }
+
+  // updateProduct
 };

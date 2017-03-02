@@ -21,5 +21,12 @@ export default {
       actionType: AppConstants.UPVOTE_COMMENT,
       comment
     });
+  },
+
+  receivedOrderItem(product) {
+    AppDispatcher.dispatch({
+      actionType: AppConstants.ADD_PRODUCT_TO_CART,
+      product
+    })
   }
 };
