@@ -18,7 +18,7 @@ class CommentEventEmitter extends EventEmitter {
     let comments = this._comments.filter(c => c && c.parentId === parentId);
 
     return comments.map(comment => {
-      comment.formattedDate = moment(comment.created_at).fromNow();
+      comment.formattedDate = moment(comment.createdAt).fromNow();
       return comment;
     });
   }
